@@ -1,8 +1,3 @@
-/*
-Name: Arathi Vallipuranathan
-ID: 501168322
- */
-
 import java.util.ArrayList;
 
 public class Season
