@@ -1,5 +1,4 @@
-
-public class Song extends AudioContent implements Comparable <Song> { // implement the Comparable interface
+public class Song extends AudioContent implements Comparable <Song> { 
     public static final String TYPENAME = "SONG";
     public static enum Genre {POP, ROCK, JAZZ, HIPHOP, RAP, CLASSICAL};
     private String artist;
