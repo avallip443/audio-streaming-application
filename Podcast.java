@@ -1,8 +1,3 @@
-/*
-Name: Arathi Vallipuranathan
-ID: 501168322
- */
-
 import java.util.ArrayList;
 
 public class Podcast extends AudioContent
@@ -35,13 +30,11 @@ public class Podcast extends AudioContent
 
     public void play()
     {
-        // sets audioFile to included both the selected episode title and the episode file
         super.setAudioFile(seasons.get(currentSeason).getEpisodeTitles().get(currentEpisode) + ".\n" +
                 seasons.get(currentSeason).getEpisodeFiles().get(currentEpisode));
-        super.play();  // plays selected episode
+        super.play();
     }
 
-    // prints table of contents of podcast (episode titles)
     public void printTOC()
     {
         for (int i = 0; i < seasons.get(currentSeason).numberOfEpisodes(); i++)
@@ -53,7 +46,6 @@ public class Podcast extends AudioContent
         }
     }
 
-    // selects episode to play
     public void selectEpisode(int episode)
     {
         if (episode >= 1 && episode <= seasons.get(currentSeason).numberOfEpisodes())
@@ -62,7 +54,6 @@ public class Podcast extends AudioContent
         }
     }
 
-    // selects season to play
     public void selectSeason(int season)
     {
         if (season >= 1 && season <= seasons.size())
