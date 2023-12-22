@@ -14,19 +14,16 @@ public class Library {
 
     public Library()
     {
-        // constructor
         songs = new ArrayList<Song>();
         audiobooks = new ArrayList<AudioBook>();
         playlists = new ArrayList<Playlist>();
     }
 
-    // downloads content between two indexes and indicates if content has been already download
     public void download(int fromIndex, int toIndex)
     {
         for (int i = fromIndex; i <= toIndex; i++) {
             AudioContent content = AudioContentStore.getAllContents().get(i-1);
 
-            // matches content type to correct content playlist and check that content is not already downloaded
             if (content.getType().equalsIgnoreCase("SONG") && !songs.contains(content))
             {
                 songs.add((Song) content);
@@ -123,8 +120,8 @@ public class Library {
         for(int i = 0; i < songs.size(); ++i) {
             if (!artistList.contains(songs.get(i).getArtist())) // if first occurrence of artist
             {
-                artistList.add(songs.get(i).getArtist());  // add artists to list
-                System.out.print(i + 1 + ". ");  // print index and artist name
+                artistList.add(songs.get(i).getArtist());
+                System.out.print(i + 1 + ". "); 
                 System.out.print(artistList.get(i));
                 System.out.println();
             }
@@ -137,8 +134,8 @@ public class Library {
         if (index >= 1 && index <= songs.size())
         {
             String temp = (songs.get(index - 1)).getTitle();  
-            this.songs.remove(index - 1);  // deletes song from library
-
+            this.songs.remove(index - 1);  
+            
             // deletes song from playlists
             for (Playlist playlist : playlists) {
                 for (int j = 0; j < playlist.getContent().size(); j++) {
