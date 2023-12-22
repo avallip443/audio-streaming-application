@@ -4,12 +4,10 @@ public class MyAudioUI
 {
     public static void main(String[] args)
     {
-        // simulation of audio content in an online store
         AudioContentStore store = new AudioContentStore();
         Library mylibrary = new Library();
         Scanner scanner = new Scanner(System.in);
 
-        // process keyboard actions
         while (scanner.hasNextLine()) {
             System.out.print(">");
             try {
@@ -44,8 +42,6 @@ public class MyAudioUI
                 {
                     mylibrary.listAllPlaylists();
                 }
-                // download audiocontent (song/audiobook/podcast) from the store
-                // specify the index of the content
                 else if (action.equalsIgnoreCase("DOWNLOAD"))
                 {
                     int fromIndex = 0;
@@ -72,7 +68,6 @@ public class MyAudioUI
                         mylibrary.download(fromIndex, toIndex);
                     }
                 }
-                // get the *library* index (index of a song based on the songs list) of a song from the keyboard and play the song
                 else if (action.equalsIgnoreCase("PLAYSONG"))
                 {
                     int index = 0;
@@ -172,7 +167,7 @@ public class MyAudioUI
 
                     mylibrary.makePlaylist(title);
                 }
-                else if (action.equalsIgnoreCase("PRINTPL"))  // print playlist content
+                else if (action.equalsIgnoreCase("PRINTPL")) 
                 {
                     System.out.print("Playlist Title: ");
                     String title = scanner.nextLine();
