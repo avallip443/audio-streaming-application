@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AudioBook extends AudioContent
 {
-    public static final String TYPENAME =	"AUDIOBOOK";
+    public static final String TYPENAME = "AUDIOBOOK";
 
     private String author;
     private String narrator;
